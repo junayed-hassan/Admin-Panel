@@ -65,7 +65,7 @@ const CampaignsTable = () => {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm mx-8 mt-5 mb-4">
+    <div className="bg-white p-6 rounded-lg shadow-sm mx-8 mt-5 mb-4 min-w-[920px] ">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold text-gray-800">Campaigns</h2>
         <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">

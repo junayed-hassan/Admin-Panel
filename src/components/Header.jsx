@@ -8,8 +8,9 @@ import imgJ from "./images/j.png";
 import imgR from "./images/r.png";
 import imgU from "./images/u.png";
 import SearchModal from "./SearchModal ";
+import ProfileDropdown from "./ProfileDropdown";
 
-function Header({adminPanel,setAdminPanel}) {
+function Header({setAdminPanel}) {
 
   // Languages list
   const languages = [
@@ -51,7 +52,7 @@ function Header({adminPanel,setAdminPanel}) {
     <header className="bg-white shadow-sm p-4 flex justify-between items-center">
       {/* Left Icons */}
       <div className="flex gap-5 px-3 text-3xl items-center">
-        <TbAlignJustified onClick={() => setAdminPanel(!adminPanel)} />
+        <TbAlignJustified onClick={() => setAdminPanel((prev) => !prev)} />
         <FaSearch  onClick={() => setModalOpen(true)} className="text-2xl mt-1" />
       </div>
 
@@ -119,23 +120,7 @@ function Header({adminPanel,setAdminPanel}) {
         </div>
 
         {/* Profile Dropdown */}
-        <div className="relative">
-          <img
-            src="https://via.placeholder.com/40"
-            alt="profile"
-            className="w-8 h-8 rounded-full cursor-pointer"
-            onClick={() => setProfileOpen(!profileOpen)}
-          />
-          {profileOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md p-4 z-10">
-              <button className="block w-full text-left">Profile</button>
-              <button className="block w-full text-left">Settings</button>
-              <button className="block w-full text-left text-red-500">
-                Logout
-              </button>
-            </div>
-          )}
-        </div>
+        <ProfileDropdown />
       </div>
       {isModalOpen && <SearchModal setModalOpen={setModalOpen} />}
     </header>
